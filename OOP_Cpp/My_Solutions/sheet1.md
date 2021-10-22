@@ -42,7 +42,17 @@ No, reference variables cannot take a NULL value. A pointer however point to a N
 
 #### 2.3 What is the difference between C-style strings and C++ style-strings ?
 
+- In C, strings are represented by `char` arrays, and thus end with a NULL byte. AS such, herein memory management is the responsibilty of the coder. This can be done with a simple `malloc`.
+
+- In Cpp: 
+
+-- strings `[std::string]` are objects and thus, memory management can be done in more easy and safe manner. 
+
+-- Cpp strings also support various mainupulation functions such as append, copy, concatenation, find etc.
+
 #### 2.4 What is a namespace? Why are they useful?
+
+A namespace is a declarative region that provides a scope to the identifiers (the names of types, functions, variables, etc) inside it. Namespaces are used to organize code into logical groups and to prevent name collisions that can occur especially when your code base includes multiple libraries.
 
 #### 2.5 The program fragment 
 
