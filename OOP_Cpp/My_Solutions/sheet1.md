@@ -29,8 +29,16 @@ cout << "No" << endl;
 
 #### 2.1 How is a reference variable different from a pointer variable?
 
+A reference is simple a alias for and existing variable. After a reference has been assigned or initialized to a variable, then it cannot be changed. \
+
+A pointer however stores the memory address a variable and thus 'points' to a variable instead. A pointer can however be changed later.
+
+Thus, a reference is similar to a 'const pointer'.
+
+
 #### 2.2 C++ favors the use of reference to pointer. Can a reference variable take a null value?
 
+No, reference variables cannot take a NULL value. A pointer however point to a NULL value.
 
 #### 2.3 What is the difference between C-style strings and C++ style-strings ?
 
