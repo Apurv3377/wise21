@@ -60,3 +60,12 @@ A namespace is a declarative region that provides a scope to the identifiers (th
 auto a; cin >> a;
 ```
 #### throws a compilation error a is not initialized. How do you fix this error?
+
+
+Here the variable a has been declared but not initialized. The error can be solved by simpy initialising it with some value, else it will pick up some random garbage value.
+
+```
+auto a; \\ variable is declared
+a = 0;  \\ variable has been initialised
+cin >> a;
+```
