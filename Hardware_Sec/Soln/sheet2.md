@@ -1,6 +1,49 @@
-#### Sheet 2 
+### Sheet 2 
 ##### Dated 16.11.2021
-##### Compiled Deo Pranav
+##### Compiled -  Deo, Pranav
+
+
+#### Exercise 1:  Postprocessing of True Random Number Generators - Theoretical Background
+
+**1.1 In which cases is post-processing required for true random number generators?**
+
+TRNG usually use some natural physical phenomenon in order to extract the entropy and be the source of true randomness [such as rae conditions, air turbulence in HDDs, mouse movement or any other noise], that is to make the system non-deterministic.
+
+- Nevertheless, however random may the the natural phenomenon source may seem, the digitalization of a physical phenomenon may introduce some form of bias, usually some statistical bias.
+
+- There might be implementation errors with the ICs or the ASICs (application specific ICs) that are used to achieve the digitalization of the physical phenomenon, or the components could be defective (i.e parasitic non ideal components).
+
+- Sometimes sampling can introduce correlation.
+
+- Thus, in order to resolve these issues, and covert any biased randomness (not really random then is it ?xD) bits to unbiased randomness, we require post processing techniques.
+
+
+**Name 3 well known post processing techniques? What are their potential shortcomings?**
+
+*A. Von-Neumann Correction Method*
+
+- Take two random bits and compare, if they are same discard the bits, and if not then use the first bit.
+
+- Why? Suppose that the `Pb(0)==x && Pb(1)==y` such that `x!=y`, then the ` Pb(01)==Pb(10)==x*y `. The ` Pb(00)==x^2 || Pb(11)==y^2 ` are discarded.
+
+*B. Parity Based Post-Processing*
+
+- Break input stream into chunks each of a `n` bits.
+
+- Compute a parity bit for each chunk by performing an XOR operation of all the bits in stream, discard the chunk and then use the parity bit.
+
+- Why? Because for every `n` bit chunk taken, there happen to be exactly 2^(n-1) zero values and 2^(n-1) one values. As such performing the XOR operation increases chaos (entropy)  leading to randomness.
+
+- Problems - reduces the stream to 1/n, requires heavy computation for the same.
+
+*C. Universal hashing*
+
+- Use hashing techniques (SHA 1, MD5 ) to convert arbitrary length random bits into a fixed length stream.
+
+- Problem - Computationally heavy, more the bits, more heavy.
+
+
+
 
 
 #### Exercise 2
@@ -31,11 +74,8 @@
 
 **2.2 Apply the Von-Neumann correction to the random sequences**
 
-*Method*
 
-- Take two random bits and compare, if they are same discard the bits, and if not then use the first bit.
 
-- Why? Suppose that the `Pb(0)==x && Pb(1)==y` such that `x!=y`, then the ` Pb(01)==Pb(10)==x*y `. The ` Pb(00)==x^2 || Pb(11)==y^2 ` are discarded.
 
 
 **2.3 Apply parity based method on the sequence given in the task using a chunk size of 16**
@@ -106,7 +146,17 @@ A   B  A_XOR_B
 
 (242)base_10 = (11110010)base_2
 
-*Rule Tables for (175)base_10*
+
+*Table 1: Cellular Automata Shift Register*
+
+
+|  Rule List |  175  | 242  |  175 |  175  |  242 |  175 |  242  |  242 |
+|---------|----------------|-----------|---------|----------------|-----------|---------|----------------|-----------|     
+ | State 0 | 0  | 1  | 1 | 1  | 0  | 1  | 1 | 0 |
+ | State 1 | 1  | 0  | 1 | 1  | 1  | 1  | 1 | 1 |
+
+
+*Rule Table for (175)base_10*
 
 |  Number |  Neighborhood  |  Rule Set |
 |---------|----------------|-----------|
@@ -120,7 +170,7 @@ A   B  A_XOR_B
 |    0     |    0 00           |    1       |
 
 
-*Rule Tables for (242)base_10*
+*Rule Table for (242)base_10*
 
 |  Number |  Neighborhood  |  Rule Set |
 |---------|----------------|-----------|
@@ -134,10 +184,6 @@ A   B  A_XOR_B
 |    0     |    0 00           |    0       |
 
 
-|  Rule List |  175  | 242  |  175 |  175  |  242 |  175 |  242  |  242 |
-|---------|----------------|-----------|---------|----------------|-----------|---------|----------------|-----------|     
- | State 0 | 0  | 1  | 1 | 1  | 0  | 1  | 1 | 0 |
- | State 1 | 1  | 0  | 1 | 1  | 1  | 1  | 1 | 1 |
 
 
     
@@ -145,14 +191,20 @@ A   B  A_XOR_B
 #### Task 4 : PUFs : Physically Unclonable Functions
 
 
-**4.1 Three PUF application and how PUFs are used for it?
+**4.1 Three PUF application and how PUFs are used for it?**
 
 PUFs can be used for 
 - Identification and Authentication
 
 - Storing keys and hashes
 
--  Random Number Generators
+- Random Number Generators
+
+**4.2 Explain How optical PUFs work?**
+
+**4.3 Think of a way of creating an optical PUF yourself with simple means?**
+
+**4.4 Explain how the ring oscillator PUF works? What it it's problem?**
 
 
 
