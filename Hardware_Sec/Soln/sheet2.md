@@ -35,5 +35,88 @@
 
 - Take two random bits and compare, if they are same discard the bits, and if not then use the first bit.
 
-- Why? Suppose that the `Pb(0)= x` and `Pb(1)=y` such that `x != y`, then the `Pb(01) == Pb(10)== x*y`. The ` Pb(00) == x^2 || Pb(11) == y^2` are discarded.
+- Why? Suppose that the `Pb(0)==x && Pb(1)==y` such that `x!=y`, then the ` Pb(01)==Pb(10)==x*y `. The ` Pb(00)==x^2^ || Pb(11)==y^2^ ` are discarded.
+
+
+**2.3 Apply parity based method on the sequence given in the task using a chunk size of 16**
+
+*Method*
+
+- Divide stream in n bits.
+
+- Calculate XOR calculation of the bits, and discard the chunk.
+
+`n=16`
+
+```
+XOR TABLE REF
+
+A   B  A_XOR_B
+
+0   0     0
+0   1     1
+1   0     1
+1   1     0
+
+```
+
+*Dividing the Sequence of TRNG 1 into chunk size of 16 ::*
+
+```
+0010000000001111      1100000000100100   ---->    1     0
+   (Chunk 1)              (Chunk 2)
+
+0111111111111110      0000100011010101   ---->    0     0
+
+
+1000000111011111      1111111111100100   ---->
+
+
+0000001111111100      1011101111111111   ---->
+
+
+1111101111101111      0111010111101111   ---->
+
+```
+
+*Dividing the Sequence of TRNG 2 into chunk size of 16 ::*
+
+```
+0011011010011011      0010000111000010   ---->
+
+
+0011111000110111      1101111000100001   ---->
+
+
+0100100011010011      1110000111001100   ---->
+
+
+0011100000000110      0010110001101000   ---->
+
+
+1101011010101001      0010101010111001   ---->
+
+
+
+```
+
+#### Task 3:  Cellular Automata Shift Register
+
+(175)~10~ = (10101111)~2~
+
+(242)~10~ = (11110010)~2~
+
+#### Task 4 : PUFs : Physically Unclonable Functions
+
+
+**4.1 Three PUF application and how PUFs are used for it?
+
+PUFs can be used for 
+- Identification and Authentication
+
+- Storing keys and hashes
+
+-  Random Number Generators
+
+
 
