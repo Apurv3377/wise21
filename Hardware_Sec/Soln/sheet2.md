@@ -1,6 +1,7 @@
 ### Sheet 2 
 ##### Dated 16.11.2021
-##### Compiled -  Deo, Pranav
+##### Compiled -  Deo, Pranav | Nurt, Aurika
+         
 
 
 #### Exercise 1:  Postprocessing of True Random Number Generators - Theoretical Background
@@ -18,7 +19,7 @@ TRNG usually use some natural physical phenomenon in order to extract the entrop
 - Thus, in order to resolve these issues, and covert any biased randomness (not really random then is it ?xD) bits to unbiased randomness, we require post processing techniques.
 
 
-**Name 3 well known post processing techniques? What are their potential shortcomings?**
+**1.2 Name three well known post processing techniques? What are their potential shortcomings?**
 
 *A. Von-Neumann Correction Method*
 
@@ -176,8 +177,6 @@ A   B  A_XOR_B
 1101011010101001      0010101010111001   ---->    1     0
 
 ```
-
-**2.3 Apply parity based method on the sequence given in the task using a chunk size of 16**
 
 
 #### Task 3:  Cellular Automata Shift Register
