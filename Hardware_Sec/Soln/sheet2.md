@@ -102,9 +102,9 @@ A   B  A_XOR_B
 
 #### Task 3:  Cellular Automata Shift Register
 
-(175)~10~ = (10101111)~2~
+(175)~10~ = (10101111)~2~  Cu^2+^
 
-(242)~10~ = (11110010)~2~
+(242)~10~ = (11110010)~2~   H~3~PO~4~
 
 #### Task 4 : PUFs : Physically Unclonable Functions
 
