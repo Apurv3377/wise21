@@ -35,7 +35,7 @@
 
 - Take two random bits and compare, if they are same discard the bits, and if not then use the first bit.
 
-- Why? Suppose that the `Pb(0)==x && Pb(1)==y` such that `x!=y`, then the ` Pb(01)==Pb(10)==x*y `. The ` Pb(00)==x^2^ || Pb(11)==y^2^ ` are discarded.
+- Why? Suppose that the `Pb(0)==x && Pb(1)==y` such that `x!=y`, then the ` Pb(01)==Pb(10)==x*y `. The ` Pb(00)==x^2 || Pb(11)==y^2 ` are discarded.
 
 
 **2.3 Apply parity based method on the sequence given in the task using a chunk size of 16**
@@ -102,9 +102,37 @@ A   B  A_XOR_B
 
 #### Task 3:  Cellular Automata Shift Register
 
-(175)~10~ = (10101111)~2~  Cu^2+^
+(175)base_10 = (10101111)base_2
 
-(242)~10~ = (11110010)~2~   H~3~PO~4~
+(242)base_10 = (11110010)base_2
+
+*Rule Tables for (175)base_10*
+
+|  Number |  Neighborhood  |  Rule Set |
+|---------|----------------|-----------|
+|    7     |    1 11           |    1       |
+|    6     |    1 10           |    0       |
+|    5     |    1 01           |    1       |
+|    4     |    1 00           |    0       |
+|    3     |    0 11           |    1       |
+|    2     |    0 10           |    1       |
+|    1     |    0 01           |    1       |
+|    0     |    0 00           |    1       |
+
+
+*Rule Tables for (242)base_10*
+
+|  Number |  Neighborhood  |  Rule Set |
+|---------|----------------|-----------|
+|    7     |    1 11           |    1       |
+|    6     |    1 10           |    1       |
+|    5     |    1 01           |    1       |
+|    4     |    1 00           |    1       |
+|    3     |    0 11           |    0       |
+|    2     |    0 10           |    0       |
+|    1     |    0 01           |    1       |
+|    0     |    0 00           |    0       |
+             
 
 #### Task 4 : PUFs : Physically Unclonable Functions
 
