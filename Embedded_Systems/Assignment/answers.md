@@ -282,7 +282,7 @@ False Negative Rate 40%
 - There are two ways at analyzing the situation, one from a developer perspective, and one from the perspective of a security expert.
 - SInce we are concerned with minimizing the risk of delivering insecure software, we shall analyse the situation as a security expert.
 
-**as security experts, we want a tool that has the least amount of `false negative rates`, since `false negative rates` simply increase the risk associated with system.**
+*As security experts, we want a tool that has the least amount of `false negative rates`, since `false negative rates` simply increase the risk associated with system.*
 
 `false negative rates`  are the number of instances where an existing weakness/ vulnerability is not reported by the tool. 
 `false positive rates`  are the number of instances where a non-existing weakness/ vulnerability is reported falsely by the tool. 
