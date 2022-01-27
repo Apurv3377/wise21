@@ -98,6 +98,7 @@ Now we shall calculate 'd', such that (d * e) % φ(n) = 1.
 Thus the private key for Alice = PRk = (d, n) = (29, 91) 
 
 ```
+**- Bob wants to send Alice the message “topsecret” as encrypted. Encode the letters by their position in the alphabet (e.g., the letter "a" is represented by the number 1) and compute the ciphertext for each character of the message.**
 
 If Bob wants to send a message to Alice, He will use the public key of Alice to encode the Message:
 
@@ -134,15 +135,38 @@ Cipher (T) = [ 20 ^ 5 ] mod 91 = 76
 Thus the cipher text for message TOPSECRET is 76 71 74 80 76 61 44 31 76.
 ```
 
-**- Bob wants to send Alice the message “topsecret” as encrypted. Encode the letters by their position in the alphabet (e.g., the letter "a" is represented by the number 1) and compute the ciphertext for each character of the message.**
-
-
-
-```
-
-```
 **- Alice wants to send Bob the signed message “signature”. Encode the letters by their position in the alphabet (e.g. the letter "a" is represented by the number 1) and compute the signature for each character of the message (i.e., to simplify the problem, we do not hash the message).**
 
+```
+The messaged to be signed is "SIGNATURE". For the sake of simplicity we are not hashing the message. Thus we will use Alice's private key to sign the message.
+
+Thus the signed message = [(message)^ d] mod n
+                        = [(SIGNATURE)^ 29] mod 91
+
+S = 19
+I = 9
+G = 7
+N = 14
+A = 1
+T = 20
+U = 21
+R = 18
+E = 5
+
+Sign (S) = [ 19 ^ 29 ] mod 91 = 80
+Sign (I) = [ 9 ^ 29 ] mod 91  = 81
+Sign (G) = [ 7 ^ 29 ] mod 91  = 63
+Sign (N) = [ 14 ^ 29 ] mod 91 = 14
+Sign (A) = [ 1 ^ 29 ] mod 91  = 1
+Sign (T) = [ 20 ^ 29 ] mod 91 = 76
+Sign (U) = [ 21 ^ 29 ] mod 91 = 21
+Sign (R) = [ 18 ^ 29 ] mod 91 = 44
+Sign (E) = [ 5 ^ 29 ] mod 91  = 31
+
+
+Thus the signed output of the message SIGNATURE is 80 81 63 14 1 76 21 44 31.
+
+```
 
 **7. (3 points) As you have seen in the lectures, public-key cryptography can be used for encryption  and key exchange. Furthermore, it has some properties (such as non-repudiation) which are not  offered  by  secret  key  cryptography.  So  why  do  we  still  use  symmetric  cryptography  in  current   applications?**
 
