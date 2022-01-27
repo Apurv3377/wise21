@@ -104,6 +104,34 @@ If Bob wants to send a message to Alice, He will use the public key of Alice to 
 ```
 Thus the ciphertext = [(message)^e] mod n
                     = [(TOPSECRET)^5] mod 91
+
+Message to send is "TOPSECRET"
+Now we need to map each character of the message with a number corresponding to their position in the alphabet, that is A is 1, B is 2 and so on.\
+
+T = 20
+O = 15
+P = 16
+S = 19
+E = 20
+C = 3
+R = 18
+E = 5
+T = 20
+
+Now we generate a cipher text for each character of the message:
+
+Cipher (T) = [ 20 ^ 5 ] mod 91 = 76
+Cipher (O) = [ 15 ^ 5 ] mod 91 = 71
+Cipher (P) = [ 16 ^ 5 ] mod 91 = 74
+Cipher (S) = [ 19 ^ 5 ] mod 91 = 80
+Cipher (E) = [ 20 ^ 5 ] mod 91 = 76
+Cipher (C) = [ 3 ^ 5 ] mod 91  = 61
+Cipher (R) = [ 18 ^ 5 ] mod 91 = 44
+Cipher (E) = [ 5 ^ 5 ] mod 91  = 31
+Cipher (T) = [ 20 ^ 5 ] mod 91 = 76
+
+
+Thus the cipher text for message TOPSECRET is 76 71 74 80 76 61 44 31 76.
 ```
 
 **- Bob wants to send Alice the message “topsecret” as encrypted. Encode the letters by their position in the alphabet (e.g., the letter "a" is represented by the number 1) and compute the ciphertext for each character of the message.**
